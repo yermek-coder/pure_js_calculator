@@ -4,7 +4,9 @@
   "description": "educational project using vanilla js, webpack and babel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack watch",
+    "dev-server": "webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/yermek-coder/pure_js_calculator/issues"
   },
-  "homepage": "https://github.com/yermek-coder/pure_js_calculator#readme"
+  "homepage": "https://github.com/yermek-coder/pure_js_calculator#readme",
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
 }
