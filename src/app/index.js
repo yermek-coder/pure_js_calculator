@@ -3,7 +3,7 @@ import "../styles/main.scss";
 import InputScreen from "./components/inputs";
 import Buttons from "./components/buttons";
 import OutputScreen from "./components/output";
-import math from "mathjs";
+import {evaluate} from "mathjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputScreenElement = document.querySelector(".input");
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.input.setValue(this.equation)
     }
     solve() {
-      this.output.setValue(math.parse(this.equation));
+      this.output.setValue(evaluate(this.equation));
     }
   }
   const calc = new Calculator(btnClass, inputClass, outputClass);
