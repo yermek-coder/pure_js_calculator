@@ -4,15 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   entry: "./src/app/index.js",
-  mode: "development",
+  mode: "production",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
+    filename: "bundle.js",
     clean: true,
-  },
-  devtool: "inline-source-map",
-  devServer: {
-    static: "./dist",
   },
   module: {
     rules: [
@@ -29,9 +25,6 @@ const config = {
       template: "./src/public/index.html",
     }),
   ],
-  optimization: {
-    runtimeChunk: "single",
-  },
 };
 
 module.exports = config;
