@@ -1,4 +1,4 @@
-<a href="https://yermek-coder.github.io/pure_js_calculator/">Try it!</a>
+<a href="https://yermek-coder.github.io/pure_js_calculator/" target="_blank">Try it!</a>
 
 Pure JS Calculator
 
