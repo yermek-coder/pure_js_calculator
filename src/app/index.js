@@ -1,16 +1,27 @@
 import "../styles/main.scss";
 
-import Input from "./components/inputs";
+import InputScreen from "./components/inputs";
 import Buttons from "./components/buttons";
-import Output from "./components/output";
+import OutputScreen from "./components/output";
 
-const inputs = document.querySelector('input')
-const htmlButtons = document.querySelector('buttons')
-const ouputElem = document.querySelector('output')
+document.addEventListener("DOMContentLoaded", () => {
+  const inputScreenElement = document.querySelector(".input");
+  const htmlButtons = document.querySelector(".buttons");
+  const outputScreenElement = document.querySelector(".output");
 
-const input = new Input(inputs)
-const buttons = new Buttons(htmlButtons)
-const output = new Output(outputElem)
+  const inputClass = new Input(inputScreenElement);
+  const btnClass = new Buttons(htmlButtons);
+  const outputClass = new Output(outputScreenElement);
 
-///DO MATH
-
+  class Calculator {
+    constructor(btnClass, inputClass, outputClass) {
+      this.btn = btnClass
+      this.input = inputClass
+      this.output = outputClass
+    }
+    async listener() {
+      const event = await this.btn.handler()
+      this.handler(event)
+    }
+  }
+});

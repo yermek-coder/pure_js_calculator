@@ -4,14 +4,25 @@ export default class Input {
 		this.value = '';
   }
   refresh() {
-    this.field.textContent = this.value;
+    this.field.textContent = this.text;
+  }
+  getValue() {
+    return this.text
   }
   setValue(value) {
-    this.field = value;
+    if (value === '') {
+      this.setBig(false)
+      this.setError(false)
+    }
+    this.value = value;
     this.refresh();
   }
-  setClass(className) {
-    if (className === "error") this.field.classes = "input error";
-    else this.field.classes = "input";
+  setError(bool) {
+    if (bool) this.field.classList.add("inp--error");
+    else this.field.classList.remove("inp--error");
+  }
+  setBig(bool) {
+    if (bool) this.field.classList.add("inp--big");
+    else this.field.classList.remove("inp--big");
   }
 }

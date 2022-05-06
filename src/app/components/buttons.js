@@ -1,13 +1,11 @@
 export default class Buttons {
-    constructor(el) {
-        this.numbers = el
-        el.addEventListener('click', this.handler)
-    }
-    // this.numbers = 
-    // this.plus
-    // this.minus
-    // this.equal
-    // handler(event) {
-    //     if (event.target === this.plus) fooOnPlusPress()
-    // }
+  constructor(el) {
+    this.buttons = el;
+    this.buttons.addEventListener("click", (event) => event);
+  }
+  async handler() {
+    return new Promise((resolve) => {
+      this.buttons.onclick = resolve;
+    });
+  }
 }
