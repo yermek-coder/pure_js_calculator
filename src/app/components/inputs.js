@@ -10,12 +10,6 @@ export default class Input {
     return this.value;
   }
   setValue(value) {
-    if (value.length > 9) {
-      this.setInitial(false);
-      this.value = "Limit";
-      this.refresh();
-      return
-    }
     this.setInitial(false);
     this.value = value;
     this.refresh();

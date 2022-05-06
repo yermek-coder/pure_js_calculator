@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       if (event.target.className.includes("equal")) {
-        if (this.limiMet) return
         this.solve();
+        if (this.error) return;
+        const temp = this.solve();
         this.answerIsGiven = true;
         this.output.setBig(true);
         this.input.setBig(false);
@@ -67,17 +68,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     equation = "";
     answerIsGiven = false;
-    limiMet = false;
+    error = false;
 
     reset() {
       this.answerIsGiven = false;
+      this.error = false;
       this.equation = "";
       this.input.reset();
       this.output.reset();
     }
     delete() {
       if (this.equation === "") return;
-      if (this.limiMet) this.reset()
 
       this.equation = this.equation.slice(0, -1);
       this.input.setValue(this.equation);
@@ -88,16 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
     solve() {
       try {
         const result = evaluate(this.equation);
-        if (!result && result !== 0 && isNaN(result)) {
-          this.output.reset();
-          this.input.reset();
-        }
+        if (!this.equation.toString().match(/\D/g)) return;
         this.output.setValue(result);
-        this.output.setError(false);
-        if (result.toString().length > 9) this.limiMet = true
+        this.error = false;
         return result;
       } catch (error) {
-        this.output.setError(true);
+        this.output.setValue("");
+        this.error = true;
       }
     }
   }
