@@ -10,25 +10,28 @@ export default class Input {
     return this.value;
   }
   setValue(value) {
-    if (value === "") {
-      this.setBig(false);
-      this.setError(false);
+    if (value.length > 9) {
+      this.setInitial(false);
+      this.value = "Limit";
+      this.refresh();
+      return
     }
+    this.setInitial(false);
     this.value = value;
     this.refresh();
-  }
-  setError(bool) {
-    if (bool) this.field.classList.add("inp--error");
-    else this.field.classList.remove("inp--error");
   }
   setBig(bool) {
     if (bool) this.field.classList.add("inp--big");
     else this.field.classList.remove("inp--big");
   }
+  setInitial(bool) {
+    if (bool) this.field.classList.add("inp--title");
+    else this.field.classList.remove("inp--title");
+  }
   reset() {
-    this.value = "Calculator"
-    this.refresh()
+    this.value = "Calculator";
+    this.setInitial(true);
+    this.refresh();
     this.setBig(true);
-    this.setError(false);
   }
 }

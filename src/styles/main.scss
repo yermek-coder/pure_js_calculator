@@ -30,9 +30,43 @@ body {
     border-radius: 1rem;
     text-align: end;
     padding: 0.5rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    .input {
+      height: 40%;
+      display: flex;
+      justify-content: end;
+      align-items: flex-start;
+      transition: font-size 0.5s ease-out;
+    }
+    .inp--title {
+      justify-content: start;
+      animation: grow-animation 0.5s ease-out forwards;
+    }
+    @keyframes grow-animation {
+      from {
+        font-size: 1px;
+      }
+      to {
+        font-size: 3rem;
+      }
+    }
     .inp--big {
-      font-size: 2rem;
+      font-size: 3rem;
+    }
+    .inp--error {
+      color: red;
+    }
+    .output {
+      display: flex;
+      justify-content: end;
+      align-items: flex-end;
+      opacity: 0.7;
+      height: 40%;
+      transition: font-size 0.5s ease-out;
+    }
+    .out--big {
+      opacity: 1;
+      font-size: 3rem;
     }
   }
 
@@ -66,8 +100,11 @@ body {
     }
     .zero {
       grid-column: 1/3;
-      aspect-ratio: 2.1;
+      // aspect-ratio: 2.1;
+      // justify-content: start;
+      aspect-ratio: 1.7;
       justify-content: start;
+      padding-left: 1.7rem;
     }
   }
 }
