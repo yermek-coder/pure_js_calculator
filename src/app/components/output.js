@@ -18,4 +18,10 @@ export default class Output {
     if (bool) this.field.classList.add("out--big");
     else this.field.classList.remove("out--big");
   }
+  reset() {
+    this.value = "";
+    this.refresh();
+    this.setBig(false);
+    this.setSecondary(true);
+  }
 }

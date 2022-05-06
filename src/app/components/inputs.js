@@ -1,18 +1,18 @@
 export default class Input {
   constructor(el) {
     this.field = el;
-		this.value = '';
+    this.value = "";
   }
   refresh() {
-    this.field.textContent = this.text;
+    this.field.textContent = this.value;
   }
   getValue() {
-    return this.text
+    return this.value;
   }
   setValue(value) {
-    if (value === '') {
-      this.setBig(false)
-      this.setError(false)
+    if (value === "") {
+      this.setBig(false);
+      this.setError(false);
     }
     this.value = value;
     this.refresh();
@@ -24,5 +24,11 @@ export default class Input {
   setBig(bool) {
     if (bool) this.field.classList.add("inp--big");
     else this.field.classList.remove("inp--big");
+  }
+  reset() {
+    this.value = "Calculator"
+    this.refresh()
+    this.setBig(true);
+    this.setError(false);
   }
 }
