@@ -1,11 +1,14 @@
 const webpack = require("webpack");
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   entry: "./src/app/index.js",
+  mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    clean: true,
   },
   module: {
     rules: [
@@ -15,6 +18,13 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Output Management",
+      title: "Development",
+      template: "./src/public/index.html",
+    }),
+  ],
 };
 
 module.exports = config;
