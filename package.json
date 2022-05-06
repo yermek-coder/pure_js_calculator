@@ -1,8 +1,7 @@
 {
   "name": "pure_js_calculator",
   "version": "1.0.0",
-  "private": true,
-  "description": "educational project using vanilla js, webpack and babel",
+  "description": "educational project using vanilla js, sass and webpack",
   "scripts": {
     "clean": "rm dist/bundle.js",
     "dev": "webpack serve --open",
@@ -13,7 +12,7 @@
     "url": "git+https://github.com/yermek-coder/pure_js_calculator.git"
   },
   "keywords": [
-    "babel",
+    "sass",
     "webpack",
     "javascript"
   ],
