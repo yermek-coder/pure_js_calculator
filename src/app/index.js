@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (this.answerIsGiven) {
         if (
           event.target.className.includes("number") ||
-          event.target.className.includes("pariod")
+          event.target.className.includes("period")
         ) {
           this.reset();
         } else {
