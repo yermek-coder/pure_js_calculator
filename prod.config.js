@@ -6,9 +6,9 @@ const config = {
   entry: "./src/app/index.js",
   mode: "production",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname),
     filename: "bundle.js",
-    clean: true,
+    clean: false,
   },
   module: {
     rules: [
