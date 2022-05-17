@@ -1,13 +1,8 @@
-export default class Input {
+import Field from "./field";
+
+export default class Input extends Field {
   constructor(el) {
-    this.field = el;
-    this.value = "";
-  }
-  refresh() {
-    this.field.textContent = this.value;
-  }
-  getValue() {
-    return this.value;
+    super(el)
   }
   setValue(value) {
     this.setInitial(false);

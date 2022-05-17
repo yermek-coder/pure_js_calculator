@@ -1,10 +1,8 @@
-export default class Output {
+import Field from "./field";
+
+export default class Output extends Field {
   constructor(el) {
-    this.field = el;
-    this.value = "";
-  }
-  refresh() {
-    this.field.textContent = this.value;
+    super(el)
   }
   setValue(value) {
     this.value = value;
